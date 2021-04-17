@@ -1,0 +1,388 @@
+/* Getting the fonts */
+/* 1. Advent Pro */
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 100;
+    src: url(assets/fonts/AdventPro-Thin.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 200;
+    src: url(assets/fonts/AdventPro-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 300;
+    src: url(assets/fonts/AdventPro-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 400;
+    src: url(assets/fonts/AdventPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 500;
+    src: url(assets/fonts/AdventPro-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 600;
+    src: url(assets/fonts/AdventPro-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Advent Pro';
+    font-weight: 700;
+    src: url(assets/fonts/AdventPro-Bold.ttf);
+}
+
+/* 2. Euphoria Script */
+@font-face {
+    font-family: 'Euphoria Script';
+    src: url(assets/fonts/EuphoriaScript-Regular.ttf);
+}
+
+/* Resetting Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+body::after {
+    content: " ";
+    background: url('assets/images/contour_pattern.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .05;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Navigation Bar Styles */
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    font-family: 'Advent Pro';
+    font-weight: 550;
+    padding: 20px 50px;
+}
+
+.navigation-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 2;
+    right: 2.2rem;
+    top: 2.5rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    visibility: hidden;
+}
+
+.menu-btn-burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background-color: #001689;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu-btn-burger::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background-color: #001689;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu-btn-burger::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 20px;
+    height: 3px;
+    margin-right: 8px;
+    background-color: #001689;
+    -webkit-transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu-btn-burger.open {
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+    background: transparent;
+}
+
+.menu-btn-burger.open::before {
+    -webkit-transform: rotate(45deg) translate(5px, 8px);
+    transform: rotate(45deg) translate(5px, 8px);
+}
+
+.menu-btn-burger.open::after {
+    width: 28px;
+    margin-right: 0;
+    -webkit-transform: rotate(-45deg) translate(3px, -7px);
+    transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.logo {
+    width: 80px;
+    margin-right: 50px;
+}
+
+.navigation-menu {
+    display: flex;
+    list-style: none;
+}
+
+.navigation-menu>li {
+    padding-bottom: 3px;
+    margin-right: 50px;
+    border-bottom: 2px solid #ffffff00;
+    transition: border-bottom .5s ease-in-out;
+}
+
+.navigation-menu>li:last-child {
+    margin-right: 0;
+}
+
+.navigation-menu>li:hover {
+    border-bottom: 2px solid #ff495c;
+    transition: border-bottom 1s ease-in-out;
+}
+
+.navigation-item {
+    list-style: none;
+    text-decoration: none;
+    color: #001689;
+    letter-spacing: 1pt;
+}
+
+.call-to-action {
+    display: flex;
+    list-style: none;
+}
+
+.call-to-action>li>a {
+    list-style: none;
+    margin-right: 50px;
+    text-decoration: none;
+    color: #001689;
+    letter-spacing: 1pt;
+}
+
+.download {
+    color: #fff !important;
+    background-color: #001689;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: -1px 5px 20px 1px #001789ce;
+    transition: box-shadow 1s ease-in-out;
+    margin-right: 0 !important;
+}
+
+.download:hover {
+    box-shadow: -1px 5px 20px 5px #001789e0;
+    transition: box-shadow 1s ease-in-out;
+}
+
+/* Header Styles */
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Advent Pro';
+    color: #001689;
+}
+
+.arrow {
+    width: 100px;
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    transform: rotate(-20deg);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 5rem;
+}
+
+.ebook {
+    display: inline-block;
+    font-family: 'Euphoria Script';
+    font-size: 6rem;
+    font-weight: 200;
+    line-height: .35;
+    border-bottom: 15px solid #ff495c;
+    padding: 0 10px;
+}
+
+.header-subtitle {
+    margin: 15px 0;
+    font-weight: 500;
+    letter-spacing: .01rem;
+    color: #2f2e41;
+}
+
+.header-image {
+    width: 30rem;
+    margin-bottom: auto;
+}
+
+@media (max-width: 940px) {
+    .navigation-group.show {
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        min-height: 450px;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        min-width: 200px;
+        background: #ffeaec;
+        padding: 35px 0 0 3rem;
+        gap: 3rem;
+        transform: translateX(0);
+        transition: transform 0.5s ease-in-out;
+        z-index: 1;
+    }
+
+    .navigation-group.hide {
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        min-height: 450px;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        min-width: 200px;
+        background: #ffeaec;
+        padding: 35px 0 0 3rem;
+        gap: 3rem;
+        transform: translateX(-100vw);
+        transition: transform 0.5s ease-in-out;
+        z-index: 1;
+    }
+
+    .navigation-menu {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .navigation-menu>li {
+        margin: 0;
+    }
+
+    .call-to-action {
+        flex-direction: column;
+        gap: 3rem;
+        height: 100%;
+    }
+
+    .menu-btn {
+        visibility: visible;
+    }
+
+    .logo {
+        position: absolute;
+        top: 1.5rem;
+        left: 2.2rem;
+        margin: 0;
+    }
+
+    .header{
+        height: fit-content;
+    }
+
+    .content{
+        width: 100vw;
+        padding: 20px;
+        flex-direction: column-reverse;
+    }
+
+    .navigation-bar{
+        padding: 0;
+        height: 100px;
+    }
+
+    .header-title{
+        font-size: 4rem;
+    }
+
+    .ebook{
+        display: block;
+        margin: 30px;
+    }
+
+    .header-image{
+        width: auto;
+        margin: 0 0 20px 0;
+        padding: 0 0;
+    }
+
+    body{
+        overflow-y: scroll;
+        height: 100%;
+    }
+}
+
+@media (max-height: 836px) {
+    body{
+        overflow-y: scroll;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+
+    .header{
+        min-height: 836px;
+    }
+}
